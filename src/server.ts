@@ -23,7 +23,8 @@ app.register(jwt, {
 
 app
   .listen({
-    port: 3333,
+    host: '0.0.0.0',
+    port: process.env.PORT ? Number(process.env.PORT) : 3333,
   })
   .then(() => {
     console.log('🚀 Servidor rodando na porta 3333')
